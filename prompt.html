@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Виселица</title>
+</head>
+<body>
+	<h1>Виселица!</h1>
+	<script>
+		// var name = prompt("Как вас зовут?");
+		// console.log("Привет, " + name);
+
+		// var likesCats = confirm("Тебе нравятся кошки?");
+		// if (likesCats) {
+		// 	console.log("Ты классная кошка!");
+		// } else {
+		// 	console.log("Что ж, не проблема. Все равно ты молодец!");
+		// }
+
+		// alert("JavaScript это здорово!");
+
+		var words = ["программа", "макака", "прекрасный", "оладушек", "книга"];
+		var word = words[Math.floor(Math.random() * words.length)];
+		var answerArray = [];
+		for (var i = 0; i < word.length; i++) {
+			answerArray[i] = "_";
+		}
+
+		var remainingLetters = word.length;
+		var guesses = 20;
+
+		while (remainingLetters > 0 && guesses > 0) {
+			alert(answerArray.join(" "));
+		
+
+		var guess = prompt("Угадайте букву или нажмите Отмена для выхода из игры.");
+		if (guess === null) {
+			break;
+		} else if (guess.length !== 1) {
+			alert("Пожалуйста, введите только одну букву.");
+		} else {
+			guess = guess.toLowerCase();
+			
+			for (var j = 0; j < word.length; j++) {
+				if (answerArray[j] === guess ) {
+						alert("Введите другую букву")
+						remainingLetters++;
+						}
+				if (word[j] === guess) {
+					answerArray[j] = guess;
+					remainingLetters--;
+					} 
+
+			}
+		}
+	}
+
+	alert(answerArray.join(" "));
+	if (guesses > 0) {
+		alert("Отлично! Было загадано слово " + word);
+	} else {
+		alert("Плохо! Ответ был " + word);
+	}
+	</script>
+</body>
+</html>
