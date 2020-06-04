@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set Timeout</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script>
+		// function timeUp () {
+		// 	alert("Время вышло!");
+		// };
+
+		// var timeoutId = setTimeout(timeUp, 25000);
+
+		var counter = 1;
+
+		function printMessage() {
+			console.log("Ты смотришь в консоль уже " + counter + " сек");
+			counter++;
+		};
+
+		var intervalId = setInterval(printMessage, 1000);
+	</script>
+</body>
+</html>

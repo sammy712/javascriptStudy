@@ -19,21 +19,44 @@
 
 		// alert("JavaScript это здорово!");
 
-		var words = ["программа", "макака", "прекрасный", "оладушек", "книга"];
-		var word = words[Math.floor(Math.random() * words.length)];
-		var answerArray = [];
-		for (var i = 0; i < word.length; i++) {
-			answerArray[i] = "_";
-		}
+		
+		function pickWord(words) {
+			var words = ["программа", "макака", "прекрасный", "оладушек", "книга"];
+			return words[Math.floor(Math.random() * words.length)];
+		};
 
+		function setupAnswerArray(word) {
+			var answerArray = [];
+			for (var i = 0; i < word.length; i++) {
+				answerArray[i] = "_";
+			}
+			return answerArray;
+		};
+
+		function showPlayerProgress(answerArray) {
+			alert(answerArray.join(" "));
+		};
+
+		function getGuess() {
+			return prompt("Угадайте букву или нажмите Отмена для выхода из игры.");
+		};
+
+		function showAnswerAndCongratulatePlayer(answerArray) {
+			showPlayerProgress(answerArray);
+			alert("Отлично! Было загадано слово " + word);
+		};
+
+		var word = pickWord();
+		var answerArray = setupAnswerArray(word);
 		var remainingLetters = word.length;
 		var guesses = 20;
 
-		while (remainingLetters > 0 && guesses > 0) {
-			alert(answerArray.join(" "));
-		
 
-		var guess = prompt("Угадайте букву или нажмите Отмена для выхода из игры.");
+		while (remainingLetters > 0 && guesses > 0) {
+
+		showPlayerProgress(answerArray);
+
+		var guess = getGuess();
 		if (guess === null) {
 			break;
 		} else if (guess.length !== 1) {
@@ -50,17 +73,18 @@
 					answerArray[j] = guess;
 					remainingLetters--;
 					} 
-
 			}
 		}
 	}
 
-	alert(answerArray.join(" "));
+	//alert(answerArray.join(" "));
 	if (guesses > 0) {
-		alert("Отлично! Было загадано слово " + word);
+		
 	} else {
 		alert("Плохо! Ответ был " + word);
 	}
+
+	showAnswerAndCongratulatePlayer(answerArray);
 	</script>
 </body>
 </html>

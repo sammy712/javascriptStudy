@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="jquery-3.5.1.min.js"></script> -->
+	<meta charset="utf-8">
+	<title>DOM</title>
+</head>
+<body>
+	<h1 id="main-heading">Привет, мир!</h1>
+
+	<!-- <script type="text/javascript">
+		var headingElement = document.getElementById("main-heading");
+		console.log(headingElement.innerHTML);
+		var newHeadingText = prompt("Введите новый заголовок: ");
+		headingElement.innerHTML = newHeadingText;
+	</script> -->
+
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script type="text/javascript">
+		// var newHeadingText = prompt("Введите новый заголовок: ");
+		// $("#main-heading").text(newHeadingText);
+		$("body").append("<p id='secondId'>This second paragraph.</p>");
+		$("body").append("<p>This new paragraph.</p>");
+		
+		// for (var i = 0; i < 3; i++) {
+		// 	var hobby = prompt("Назови одно из своих хобби!");
+		// 	$("body").append("<p>" + hobby + "</p>");
+		// }
+		// $("h1").fadeOut(3000);
+
+		// $("h1").text("Этот текст скоро исчезнет").fadeOut(3000); 
+		// $("h1").fadeOut(3000).fadeIn(2000);
+		// $("h1").slideUp(1000).slideDown(1000);
+		$("#secondId").slideUp(1000).slideDown(1000);
+
+		for (var i = 0; i < 5; i++) {
+			$("h1").fadeOut(1000);
+			$("h1").fadeIn(1000);
+		}
+	</script>
+
+</body>
+</html>
