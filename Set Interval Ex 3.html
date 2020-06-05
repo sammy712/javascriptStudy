@@ -14,8 +14,10 @@
 		var rightOffset = 200;
 		var upOffset = 200;
 		
+		$("#heading").offset(left: leftOffset);
+
 		function moveHeading() {
-			
+			$("#heading").offset(left: leftOffset);
 			if (leftOffset < 200) {
 			$("#heading").offset({left: leftOffset});
 			leftOffset++;

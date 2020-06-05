@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set Interval Ex</title>
+</head>
+<body>
+	<h1 id="heading">Hello World!</h1>
+
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+	<script>
+		// var leftOffset = 0;
+		// var downOffset = 0;
+		// var rightOffset = 200;
+		// var upOffset = 200;
+		var direction = 'right';
+		var offset = 0;
+		var clicks = 0;
+		var intervalNum = 120;
+
+		$("#heading").offset({left: offset, top: offset});
+
+		function moveHeading() {
+			
+			if (direction === 'right') {
+				$("#heading").offset({left: offset});
+				offset++;
+				if (offset > 200) {
+					offset = 0;
+					direction = 'down';
+				}
+			} else if (direction === 'down') {
+				$("#heading").offset({top: offset});
+				offset++;
+				if (offset > 200) {
+					offset = 200;
+					direction = 'left';
+					
+				}
+			} else if (direction === 'left') {
+				$("#heading").offset({left: offset})
+				offset--;
+				if (offset < 0) {
+					offset = 200;
+					direction = 'up';
+				}
+			} else if (direction === 'up') {
+				$("#heading").offset({top: offset})
+				offset--;
+				if (offset < 0 ) {
+					offset = 0;
+					direction = 'right';
+				}
+			}
+			// if (leftOffset < 200) {
+			// $("#heading").offset({left: leftOffset});
+			// leftOffset++;
+			// console.log(leftOffset + " Right");
+			// } else if (downOffset < 200)	{
+			// 	$("#heading").offset({top: downOffset});
+			// 	downOffset++;
+			// 	console.log(downOffset + " Down");
+			// } else	if (rightOffset > 0) {
+			// 	$("#heading").offset({left: rightOffset});
+			// 	rightOffset--; 
+
+			// 	console.log(leftOffset + " Left");
+			// } else if (upOffset > 0) {
+			// 	$("#heading").offset({top: upOffset});
+			// 	upOffset--;
+			// }
+		};
+
+		var setIntervalID = setInterval(moveHeading, intervalNum);
+
+		$("#heading").click(function () {
+			intervalNum /=2;
+			clearInterval(setIntervalID);
+			clicks++;
+			console.log(setIntervalID);
+
+			if (clicks > 10) {
+				$("#heading").text("You win!");
+			} else {
+				setIntervalID = setInterval(moveHeading, intervalNum);
+			}
+
+			//console.log(clicks);
+		});
+	</script>
+
+</body>
+</html>
