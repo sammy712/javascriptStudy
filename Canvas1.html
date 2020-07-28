@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+	<canvas id="canvas" width="200" height="200"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		//ctx.fillRect(0, 0, 10, 10);
+		// for (var i = 0; i < 8; i++) {
+		// 	ctx.fillRect(i * 10, i * 10, 10, 10);
+		// }
+
+		ctx.fillRect(50, 0, 50, 50);
+		ctx.fillRect(70, 50, 10, 10);
+		ctx.fillRect(70, 60, 10, 10);
+		ctx.fillRect(50, 80, 50, 50);
+		ctx.fillStyle = "Red"; //поменять цвет фигуре
+		for (var i = 0; i < 14; i++) {
+			ctx.fillRect(i * 10, 70, 10, 10);
+		}
+
+		for (var i = 0; i < 10; i++) {
+			ctx.fillRect(40, 70 + (i * 10), 10, 10);
+		}
+		for (var i = 0; i < 10; i++) {
+			ctx.fillRect(90, 70 + (i * 10), 10, 10);
+		}
+
+	</script>
+</body>
+</html>

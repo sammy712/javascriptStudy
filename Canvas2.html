@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+	<canvas id="canvas" width="200" height="200"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		//ctx.fillRect(0, 0, 10, 10);
+		// for (var i = 0; i < 8; i++) {
+		// 	ctx.fillRect(i * 10, i * 10, 10, 10);
+		// }
+
+		//Три прямоугольника разных цветов
+		// ctx.fillStyle = "Red"; //поменять цвет фигуре
+		// ctx.fillRect(0, 0, 50, 100);
+		// ctx.fillStyle = "PaleGreen";
+		// ctx.fillRect(50, 0, 50, 100);
+		// ctx.fillStyle = "SkyBlue";
+		// ctx.fillRect(100, 0, 50, 100);
+
+		//Контур
+		// ctx.strokeStyle = "DeepPink";
+		// ctx.lineWidth = 4;
+		// ctx.strokeRect(10, 10, 100, 20);
+
+		//Х из линий
+		// ctx.strokeStyle = "Turquoise";
+		// ctx.lineWidth = 4;
+		// ctx.beginPath();
+		// ctx.moveTo(10, 10);
+		// ctx.lineTo(60, 60);
+		// ctx.moveTo(60, 10);
+		// ctx.lineTo(10, 60);
+		// ctx.stroke();
+
+		//Человек из линий
+		// ctx.lineWidth = 4;
+		// ctx.strokeRect(20, 10, 20, 20);
+		// ctx.beginPath();
+		// ctx.moveTo(30, 30);
+		// ctx.lineTo(30, 70);
+		// ctx.moveTo(30, 70);
+		// ctx.lineTo(50, 110);
+		// ctx.moveTo(30, 70);
+		// ctx.lineTo(10, 110);
+		// ctx.moveTo(30, 50);
+		// ctx.lineTo(10, 40);
+		// ctx.moveTo(30, 50);
+		// ctx.lineTo(50, 40);
+		// ctx.stroke();
+
+		//Домик из линий заполненный цветом
+		ctx.fillStyle = "Blue";
+		ctx.beginPath();
+		ctx.moveTo(100, 100);
+		ctx.lineTo(100, 60);
+		ctx.lineTo(130, 30);
+		ctx.lineTo(160, 60);
+		ctx.lineTo(160, 100);
+		ctx.lineTo(100, 100);
+		ctx.fill();
+
+	</script>
+</body>
+</html>
